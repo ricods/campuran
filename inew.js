@@ -6,7 +6,7 @@ null==d?void 0:d))},attrHooks:{type:{set:function(a,b){if(!o.radioValue&&"radio"
 function wrap(t,e,r){for(var i=document.querySelectorAll(e),o=0;o<i.length;o++){i[o].getAttribute("src")&&(i[o].setAttribute("data-src",i[o].getAttribute("src")),i[o].removeAttribute("src")),i[o].setAttribute("class","lazyload"),i[o].setAttribute("style","position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: 0px;");var a=t+i[o].outerHTML+r;i[o].outerHTML=a}}wrap("<div style='position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin:0 auto;width:100%'>","iframe[src*='youtube.com']","</div>");
 
 var homePage=window.location.origin,
-numPosts = 8;
+numPosts = 10;
 function recentPosts(a){if(document.getElementById("recent-posts")){var e=a.feed.entry,title,link,content="",ct=document.getElementById("recent-posts");for(var i=0;i<numPosts;i++){for(var j=0;j<numPosts;j++){if(e[i].link[j].rel=="alternate"){link=e[i].link[j].href;break}}var title=e[i].title.$t;content+='<li class="recent-posts"><a href="'+link+'" title="'+title+'" target="_blank">'+title+'</a></li>'}ct.innerHTML=content}}var rcp=document.createElement('script');rcp.src=homePage+'/feeds/posts/summary?alt=json-in-script&orderby=published&max-results='+numPosts+'&callback=recentPosts';document.getElementsByTagName('head')[0].appendChild(rcp);
 
 function insertAfter(addition,target) {var parent = target.parentNode;if (parent.lastChild == target) {parent.appendChild(addition); } else {parent.insertBefore(addition,target.nextSibling);}}
